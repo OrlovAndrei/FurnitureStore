@@ -1,0 +1,21 @@
+﻿@page "/{name}"
+@model ProductsModel
+@{
+	ViewData["Title"] = "Products by category";
+}
+<div class="text-center">
+	<h1 class="display-4">@Model.CategoryName</h1>
+	<table>
+		@foreach (var product in Model.Products)
+		{
+			<tr>
+				<td>@product.Name</td>
+				<td>@product.Discription</td>
+				<td>@product.Price</td>
+				<td>
+					<a href='@Url.Page("Order", new { id = product.Id })'>Оформить заказ</a>
+				</td>
+			</tr>
+		}
+	</table>
+</div>

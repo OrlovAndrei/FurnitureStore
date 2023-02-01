@@ -5,13 +5,13 @@ namespace FurnitureStore
 {
     public class DbService : IDbService
     {
-        public List<Product> GetAllProductsByCategoryId(int id)
+        public List<Product> GetAllProductsByCategory(string name)
         {
             var products = new List<Product>();
 
             using (var db = new ApplicationContext())
             {
-                products = db.Products.Include(p => p.Category).Where(c => c.Id == id).ToList();
+                products = db.Products.Include(p => p.Category).Where(c => c.Name == name).ToList();
             }
 
             return products;

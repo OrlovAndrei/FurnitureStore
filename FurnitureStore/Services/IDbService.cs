@@ -4,7 +4,7 @@ namespace FurnitureStore
 {
     public interface IDbService
     {
-        List<Product> GetAllProductsByCategoryId(int id);
+        List<Product> GetAllProductsByCategory(string name);
 
         Product GetProductById(int id);
 

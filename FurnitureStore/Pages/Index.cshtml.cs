@@ -21,10 +21,5 @@ namespace FurnitureStore.Pages
         {
             Categories = _dbService.GetAllCategory();
         }
-
-        //public IActionResult OnGet(int id)
-        //{
-        //    return RedirectToPage("/");
-        //}
     }
 }

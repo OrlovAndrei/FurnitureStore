@@ -1,7 +1,7 @@
-﻿@page "{id?}"
+﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Categories";
 }
 
 <div class="text-center">
@@ -11,7 +11,9 @@
 		{
 			<tr>
 				<td>@category.Name</td>
-				<td><button>Перейти</button></td>
+				<td>
+					<a href='@Url.Page("Products", new { name = category.Name })'>Перейти</a>
+				</td>
 			</tr>
 		}
     </table>
