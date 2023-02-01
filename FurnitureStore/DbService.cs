@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FurnitureStore
 {
-    public class DbService
+    public class DbService : IDbService
     {
         public List<Product> GetAllProductsByCategoryId(int id)
         {
