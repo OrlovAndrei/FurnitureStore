@@ -6,7 +6,7 @@ namespace FurnitureStore
     public class ApplicationContext : DbContext
     {
         public DbSet<Product> Products => Set<Product>();
-        public DbSet<Category> ProductCategories => Set<Category>();
+        public DbSet<Category> Categories => Set<Category>();
         public DbSet<Order> Orders => Set<Order>();
         
         public ApplicationContext()
