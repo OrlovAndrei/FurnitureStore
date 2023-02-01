@@ -8,6 +8,6 @@ namespace FurnitureStore.Models
         public string Name { get; set; }
         public string Discription { get; set; }
         public decimal Price { get; set; }
-        public ProductCategory Category { get; set; }
+        public Category Category { get; set; }
     }
 }
