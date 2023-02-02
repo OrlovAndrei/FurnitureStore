@@ -9,12 +9,10 @@ namespace FurnitureStore.Pages
 		public List<Product> Products = new List<Product>();
 		public string CategoryName;
 
-		private readonly ILogger<ProductsModel> _logger;
 		private readonly IDbService _dbService;
 
-		public ProductsModel(ILogger<ProductsModel> logger, IDbService dbService)
+		public ProductsModel(IDbService dbService)
 		{
-			_logger = logger;
 			_dbService = dbService;
 		}
 
