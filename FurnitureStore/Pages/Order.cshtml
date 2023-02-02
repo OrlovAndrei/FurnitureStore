@@ -1,5 +1,16 @@
-﻿@page
+﻿@page "{id}"
 @model FurnitureStore.Pages.OrderModel
 @{
 	ViewData["Title"] = "Order";
 }
+<div>
+	<h1>Покупка @Model.Product.Name</h1>
+	<form action="post" >
+		<label for="number">Количество</label>
+		<input type="range" name="number" />
+		<label for="adress">Адрес</label>
+		<input type="text" name="adress" />
+		<input type="submit" value="Отправить">
+	</form>
+</div>
+
