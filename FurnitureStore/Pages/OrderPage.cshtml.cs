@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FurnitureStore.Pages
 {
-    public class OrderModel : PageModel
+    public class OrderPageModel : PageModel
     {
 		public Product Product;
 
 		private readonly IDbService _dbService;
 
-		public OrderModel(IDbService dbService)
+		public OrderPageModel(IDbService dbService)
 		{
 			_dbService = dbService;
 		}
@@ -20,10 +20,10 @@ namespace FurnitureStore.Pages
 			Product = _dbService.GetProductById(id);
         }
 
-		public IActionResult OnPost(int number, string adress)
-		{
-			_dbService.AddOrder(new Order { Product = Product, OrderPrice = Product.Price*number, Number = number, Time = DateTime.Now, Adress = adress});
-			return RedirectToPage("/");
-		}
+		//public IActionResult OnPost(int number, string adress)
+		//{
+		//	_dbService.AddOrder(new Order { Product = Product, OrderPrice = Product.Price*number, Number = number, Time = DateTime.Now, Adress = adress});
+		//	return RedirectToPage("/");
+		//}
     }
 }

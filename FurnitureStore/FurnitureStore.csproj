@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Order.cshtml" />
+    <Content Remove="Pages\OrderPage.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,15 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Order.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Order.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\Order.cshtml" />
+    <None Include="Pages\OrderPage.cshtml" />
   </ItemGroup>
 
 </Project>
