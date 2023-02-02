@@ -1,16 +1,16 @@
 ﻿@page "{id}"
-@model OrderPageModel
+@model OrderModel
 @{
 	ViewData["Title"] = "Order";
 }
 <div>
 	<h1>Покупка @Model.Product.Name</h1>
-	<form action="post" >
+	<form method="post">
+		<input type="hidden" name="id" value="@Model.Product.Id" />
 		<label for="number">Количество</label>
-		<input type="range" name="number" />
+		<input type="number" name="number" />
 		<label for="adress">Адрес</label>
 		<input type="text" name="adress" />
 		<input type="submit" value="Отправить">
 	</form>
 </div>
-

@@ -7,16 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\OrderPage.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\OrderPage.cshtml" />
   </ItemGroup>
 
 </Project>

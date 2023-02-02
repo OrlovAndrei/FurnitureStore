@@ -45,6 +45,7 @@ namespace FurnitureStore
         {
             using (var db = new ApplicationContext())
             {
+                var g = db.Orders.ToList();
                 db.Orders.Add(order);
                 db.SaveChanges();
             }
