@@ -11,7 +11,7 @@ namespace FurnitureStore
 
             using (var db = new ApplicationContext())
             {
-                products = db.Products.Include(p => p.Category).Where(c => c.Name == name).ToList();
+                products = db.Products.Where(p => db.Categories.Where(c => c.Name == name).FirstOrDefault().Id == p.CategoryId).ToList();
             }
 
             return products;

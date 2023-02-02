@@ -11,7 +11,7 @@ namespace FurnitureStore
 
 		public ApplicationContext()
 		{
-			//Database.EnsureDeleted();
+			Database.EnsureDeleted();
 			Database.EnsureCreated();
 		}
 
