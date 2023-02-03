@@ -23,7 +23,7 @@ namespace FurnitureStore
 
 			using (var db = new ApplicationContext())
 			{
-				product = db.Products.Where(p => p.Id == id).FirstOrDefault();
+				product = db.Products.Single(p => p.Id == id);
 			}
 
 			return product;
