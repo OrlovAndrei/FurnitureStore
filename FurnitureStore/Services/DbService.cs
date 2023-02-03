@@ -3,53 +3,52 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FurnitureStore
 {
-    public class DbService : IDbService
-    {
-        public List<Product> GetAllProductsByCategory(string name)
-        {
-            var products = new List<Product>();
+	public class DbService : IDbService
+	{
+		public List<Product> GetAllProductsByCategory(string name)
+		{
+			var products = new List<Product>();
 
-            using (var db = new ApplicationContext())
-            {
-				//products = db.Products.Where(p => db.Categories.Where(c => c.Name == name).FirstOrDefault().Id == p.CategoryId).ToList();
+			using (var db = new ApplicationContext())
+			{
 				products = db.Products.Where(p => p.Category.Name == name).ToList();
 			}
 
-            return products;
-        }
+			return products;
+		}
 
-        public Product GetProductById(int id)
-        {
-            var product = new Product();
+		public Product GetProductById(int id)
+		{
+			var product = new Product();
 
-            using (var db = new ApplicationContext())
-            {
-                product = db.Products.Where(p => p.Id == id).FirstOrDefault();
-            }
+			using (var db = new ApplicationContext())
+			{
+				product = db.Products.Where(p => p.Id == id).FirstOrDefault();
+			}
 
-            return product;
-        }
+			return product;
+		}
 
-        public List<Category> GetAllCategory()
-        {
-            var categories = new List<Category>();
+		public List<Category> GetAllCategory()
+		{
+			var categories = new List<Category>();
 
-            using (var db = new ApplicationContext())
-            {
-                categories = db.Categories.ToList();
-            }
+			using (var db = new ApplicationContext())
+			{
+				categories = db.Categories.ToList();
+			}
 
-            return categories;
-        }
+			return categories;
+		}
 
-        public void AddOrder(Order order)
-        {
-            using (var db = new ApplicationContext())
-            {
-                var g = db.Orders.ToList();
-                db.Orders.Add(order);
-                db.SaveChanges();
-            }
-        }
-    }
+		public void AddOrder(Order order)
+		{
+			using (var db = new ApplicationContext())
+			{
+				var g = db.Orders.ToList();
+				db.Orders.Add(order);
+				db.SaveChanges();
+			}
+		}
+	}
 }
