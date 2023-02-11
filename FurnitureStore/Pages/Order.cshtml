@@ -20,3 +20,10 @@
 		<input type="submit" value="Отправить">
 	</form>
 </div>
+<script>
+	number.onchange = () => {
+		if(number.value < 0) number.value = 0;
+		if(number.value > 100) number.value = 100;
+		price.innerText = `Цена: ${number.value * @Model.Product.Price.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"))}`;
+	};
+</script>
