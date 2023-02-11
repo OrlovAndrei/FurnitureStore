@@ -11,7 +11,7 @@ namespace FurnitureStore
 
 		public ApplicationContext()
 		{
-			Database.EnsureDeleted();
+			//Database.EnsureDeleted();
 			Database.EnsureCreated();
 		}
 
@@ -20,7 +20,7 @@ namespace FurnitureStore
 			optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=furniture_store;Username=postgres;Password=root");
 		}
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		/*protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			var beds = new Category() { Id = 1, Name = "Кровати" };
 			var sofas = new Category() { Id = 2, Name = "Диваны" };
@@ -39,6 +39,6 @@ namespace FurnitureStore
 					new Product { Id = 6, Name = "Диван-кровать Куба", Discription = "Прямой диван Куба – практичное решение для небольшой гостиной, студии или кухни. При своих скромных размерах он трансформируется в полноценное двуспальное место. Поскольку подушки модели раскладываются на пол, модель не предназначена для ежедневного использования, но удобна для размещения припозднившихся гостей. Тканевая обивка легко поддается чистке. Прикручивающиеся ножки выполнены из прочного пластика. Эта модель доступна только в тех вариантах обивки, которые представлены в нашем ассортименте.", Price = 7999.0M, CategoryId = sofas.Id },
 					new Product { Id = 7, Name = "Диван-кровать Атланта", Discription = "Строгие формы дивана Атланта смягчены за счет пышных приспинных подушек, рельеф которых сформирован при помощи утяжек. Твердые накладки на боковинах выполняют роль придиванного столика: на них можно разместить небольшой поднос с кофейными чашками, положить книгу или заряжающийся гаджет.", Price = 17999.0M, CategoryId = sofas.Id }
 			);
-		}
+		}*/
 	}
 }

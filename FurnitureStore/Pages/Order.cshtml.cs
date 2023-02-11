@@ -1,12 +1,16 @@
 ﻿using FurnitureStore.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
 
 namespace FurnitureStore.Pages
 {
 	public class OrderModel : PageModel
-    {
-		public Product Product;
+	{
+		[BindProperty]
+		public InputModel Input { get; set; }
+		public Product Product { get; set; }
 
 		private readonly IDbService _dbService;
 
@@ -20,11 +24,36 @@ namespace FurnitureStore.Pages
 			Product = _dbService.GetProductById(id);
 		}
 
-		public IActionResult OnPost(int id, int number, string adress)
+		public IActionResult OnPost(int id)
 		{
+			if (!ModelState.IsValid)
+			{
+				OnGet(id);
+				return Page();
+			}
+
 			Product = _dbService.GetProductById(id);
-			_dbService.AddOrder(new Order { ProductId = Product.Id, OrderPrice = Product.Price*number, Number = number, Time = DateTime.UtcNow, Adress = adress });
+			_dbService.AddOrder(new Order
+			{
+				ProductId = Product.Id,
+				OrderPrice = Product.Price * Input.Number,
+				Number = Input.Number,
+				Time = DateTime.UtcNow,
+				Adress = Input.Adress
+			});
 			return RedirectToPage("Index");
+		}
+
+		public class InputModel
+		{
+			[Required]
+			[Display(Name = "Количество:")]
+			[Range(0, 100)]
+			public int Number { get; set; }
+
+			[Required]
+			[Display(Name = "Адресс:")]
+			public string Adress { get; set; }
 		}
 	}
 }

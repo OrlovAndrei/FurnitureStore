@@ -6,10 +6,17 @@
 <div>
 	<h1>Покупка @Model.Product.Name</h1>
 	<form asp-page="Order">
-		<label for="number">Количество</label>
-		<input type="number" name="number" />
-		<label for="adress">Адрес</label>
-		<input type="text" name="adress" />
+		<div>
+			<label asp-for="Input.Number"></label>
+			<input id="number" asp-for="Input.Number"/>
+			<span asp-validation-for="Input.Number"></span>
+		</div>
+		<div>
+			<label asp-for="Input.Adress"></label>
+			<input asp-for="Input.Adress" />
+			<span asp-validation-for="Input.Adress"></span>
+		</div>
+		<span id="price">Цена: 0</span><br/>
 		<input type="submit" value="Отправить">
 	</form>
 </div>
