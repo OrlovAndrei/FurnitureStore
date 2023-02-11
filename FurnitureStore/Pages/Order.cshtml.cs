@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FurnitureStore.Pages
 {
-	[IgnoreAntiforgeryToken]
 	public class OrderModel : PageModel
     {
 		public Product Product;

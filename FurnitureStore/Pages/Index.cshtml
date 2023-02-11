@@ -12,7 +12,7 @@
 			<tr>
 				<td>@category.Name</td>
 				<td>
-					<a href='@Url.Page("Products", new { name = category.Name })'>Перейти</a>
+					<a asp-page="Products" asp-route-name="@category.Name">Перейти</a>
 				</td>
 			</tr>
 		}

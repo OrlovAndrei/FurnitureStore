@@ -5,8 +5,7 @@
 }
 <div>
 	<h1>Покупка @Model.Product.Name</h1>
-	<form method="post">
-		<input type="hidden" name="id" value="@Model.Product.Id" />
+	<form asp-page="Order">
 		<label for="number">Количество</label>
 		<input type="number" name="number" />
 		<label for="adress">Адрес</label>
