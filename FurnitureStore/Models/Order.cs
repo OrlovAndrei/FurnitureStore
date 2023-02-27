@@ -8,6 +8,6 @@
         public decimal OrderPrice { get; set; }
         public int Number { get; set; }
         public DateTime Time { get; set; }
-        public string Adress { get; set; }
+        public string Address { get; set; }
     }
 }

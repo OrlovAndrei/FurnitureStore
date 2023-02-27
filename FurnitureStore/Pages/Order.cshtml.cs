@@ -39,7 +39,7 @@ namespace FurnitureStore.Pages
 				OrderPrice = Product.Price * Input.Number,
 				Number = Input.Number,
 				Time = DateTime.UtcNow,
-				Adress = Input.Adress
+				Address = Input.Address
 			});
 			return RedirectToPage("Index");
 		}
@@ -52,8 +52,8 @@ namespace FurnitureStore.Pages
 			public int Number { get; set; }
 
 			[Required]
-			[Display(Name = "Адресс:")]
-			public string Adress { get; set; }
+			[Display(Name = "Адрес:")]
+			public string Address { get; set; }
 		}
 	}
 }
